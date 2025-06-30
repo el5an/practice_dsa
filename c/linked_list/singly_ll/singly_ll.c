@@ -46,14 +46,14 @@ int add_at_start(struct singly_ll *sll, int data)
 {
     if(sll->size == 0)
     {
-        sll->head = create_create_new_node(data);
+        sll->head = create_new_node(data);
         sll->tail = sll->head;
 
         sll->size = 1;
     }
     else
     {
-        struct Node* temp = create_create_new_node(data);
+        struct Node* temp = create_new_node(data);
         temp->next = sll->head;
         sll->head = temp;
 
@@ -66,14 +66,14 @@ int add_at_end(struct singly_ll *sll, int data)
 {
     if(sll->size == 0)
     {
-        sll->tail = create_create_new_node(data);
+        sll->tail = create_new_node(data);
         sll->head = sll->tail;
 
         sll->size = 1;
     }
     else
     {
-        sll->tail->next = create_create_new_node(data);
+        sll->tail->next = create_new_node(data);
         sll->tail = sll->tail->next;
         
         sll->size++;
