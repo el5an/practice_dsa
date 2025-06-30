@@ -66,6 +66,27 @@ int add_at_start(struct doubly_ll *dll, int data)
     return dll->size++;
 }
 
+int add_at_end(struct doubly_ll *dll, int data)
+{
+    if(dll->size == 0)
+    {
+        dll->tail = create_new_node(data);
+        dll->head = dll->tail;
+    }
+    else
+    {
+        struct Node *temp = create_new_node(data);
+
+        temp->prev = dll->tail; // Set the new node's left pointer to the last node
+
+        dll->tail->next = temp; // Set the last nonde's right pointer to the new node
+
+        dll->tail = temp; // Set the tail to point to the new last node
+    }
+
+    dll->size++;
+}
+
 int main(void)
 {
     struct doubly_ll dll1;
@@ -77,5 +98,14 @@ int main(void)
     add_at_start(&dll1, 205);
 
     print_dll(dll1);
+
+    add_at_end(&dll1, 206);
+    add_at_end(&dll1, 207);
+    add_at_end(&dll1, 208);
+    add_at_end(&dll1, 209);
+    add_at_end(&dll1, 210);
+    
+    print_dll(dll1);
+
 
 }
