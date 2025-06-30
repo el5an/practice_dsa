@@ -1,8 +1,4 @@
 #include "singly_ll.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "malloc.h"
 
 struct Node 
 {
@@ -37,7 +33,7 @@ void print_sll(struct singly_ll sll)
     printf("NULL\n");
 }
 
-struct Node* create_create_new_node(int data)
+struct Node* create_new_node(int data)
 {
     struct Node* create_new_node = (struct Node*)malloc(sizeof(struct Node));
     create_new_node->data = data;

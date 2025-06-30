@@ -18,7 +18,7 @@ void print_sll(struct singly_ll sll);
 
 /// @brief Creates a new node
 /// @param data Node value
-struct Node* create_create_new_node(int data);
+struct Node* create_new_node(int data);
 
 /// @brief Adds a new node at the start of the singly linked list with data as value
 /// @param sll 
